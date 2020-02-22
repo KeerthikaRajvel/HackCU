@@ -1,3 +1,4 @@
+#Returns a dictionary with book details
 import googlebooks
 api = googlebooks.Api()
 api_result = api.list('intitle:Harry Potter and the chamber of secrets')

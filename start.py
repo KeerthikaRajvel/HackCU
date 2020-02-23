@@ -39,7 +39,7 @@ def search():
 def bookDetails(book):
    details=connection.search(book)
    tweets=twitterAPI.get_tweets(book)
-   return render_template('bookDetails.html',book_details=details,tweets=tweets)
+   return render_template('bookDetails.html',book_details=details,target=tweets)
 
 if __name__ == '__main__':
    app.run(debug = True,port=3400)

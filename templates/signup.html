@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Signup Form  </title>
+    <link rel="stylesheet" href="../static/signupstyle.css">
+</head>
+<body>
+
+<form action="http://localhost:3400/add_user" method="POST">
+  <div class="container">
+    <h1>Register</h1>
+    <hr>
+
+    <input type="text" placeholder="First Name" name="FirstName" required>
+
+    <input type="text" placeholder="Last Name" name="LastName" required>
+
+    <input type="text" placeholder="Email" name="email" required>
+
+    <input type="password" placeholder="Enter Password" name="password" required>
+
+    <hr>
+
+    <button type="submit" class="registerbtn"  value="Submit">Join</button>
+  </div>
+  
+</form>
+
+</body>
+</html>

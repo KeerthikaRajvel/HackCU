@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="./static/style.css">
+<title>
+    Papyrus
+</title>
+
+</head>
+<body>
+    <div id="bg">
+        <img src="./static/images/Landing.png" alt="">
+    </div>
+<!--     
+    <div id="title">
+        <p><font color="white">Papyr-Us</font></p>
+        <p>Just Keep Reading!</p>
+    </div> -->
+
+    <div class="container">
+        <div id="top-left"><h2>Papyr-Us</h2></div>
+        <div id="tagline"><h5>Just keep reading!</h5></div>
+        <div id="desc"><h5>Library curated from users' books.</h5></div>
+    </div> 
+    <div class="login-box">
+        <h1>Welcome Reader</h1>
+            <form action="http://localhost:3400/dashboard">
+            <input type="text" name="email" placeholder="Email">
+            <input type="password" name="password" placeholder="Password">
+            <input type="submit" name="submit" value="Login">
+            </form>
+            <p>Not a member yet? <a href = "{{ url_for('signup') }}"> Sign up </a></p>
+    </div>
+    
+    
+</body>
+</html>

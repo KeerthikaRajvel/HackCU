@@ -1,6 +1,6 @@
 # Papyr-Us
 
-Book barter available as a web-app. Connect with other readers and exchange books with eachother. 
+Book barter available as a web-app. Connect with other readers and exchange books with each other. 
 
 ## Features
 

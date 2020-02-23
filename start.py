@@ -5,6 +5,13 @@ from TwitterAPI import twitterAPI
 
 app=Flask(__name__)
 movie="Sapiens"
+@app.route('/')
+def index():
+   return render_template('index.html')
+
+@app.route('/signup',methods=['GET'])
+def signup():
+   return render_template('signup.html')
 
 @app.route('/bookDetails')
 def bookDetails(movie):

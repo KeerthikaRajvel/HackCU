@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="./static/style.css">
 <title>
     Papyrus
 </title>
@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="bg">
-        <img src="images/Landing.png" alt="">
+        <img src="./static/images/Landing.png" alt="">
     </div>
 <!--     
     <div id="title">
@@ -26,10 +26,9 @@
         <h1>Welcome Reader</h1>
             <form>
             <input type="text" name="email" placeholder="Email">
-            <!-- <p>Password</p> -->
             <input type="password" name="password" placeholder="Password">
             <input type="submit" name="submit" value="Login">
-            <p>Not a member yet? <a href = signup.html> Sign up </a></p>
+            <p>Not a member yet? <a href = "{{ url_for('signup') }}"> Sign up </a></p>
             </form>
     </div>
     

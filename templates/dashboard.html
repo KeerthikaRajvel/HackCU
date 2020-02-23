@@ -1,12 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Dashboard</title>
+        <link rel="stylesheet" href="./static/dash.css">
+<title>
+    Papyrus
+</title>
+
 </head>
 <body>
-{% for book in books: %}
-    <img src={{book["image"]}}>
-{% endfor %}
+    <div class="header">
+        <div class="header-left"><h2>Papyr-Us</h2></div>
+        <div class="header-right"> <form method="POST"><input id="searchbox" href="{{ url_for('search') }}" type="text" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2" />
+        </form></div>
+      <div class="header-btn"> <button class="lend" onclick="openNav()">Lend</button> </div>
+        <!-- <div class="header-tag"><h7>Just keep reading!</h7></div> -->
+    </div>
+     <!-- The overlay -->
+    <div id="myNav" class="overlay">
+
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+        <!-- Overlay content -->
+        <div class="overlay-content">
+            <input type="text" name="book-name" placeholder="Book Title">
+            <input type="submit" name="submit" value="Confirm">
+        </div>
+
+    </div>
+      
+      <!-- Use any element to open/show the overlay navigation menu -->
+    <script>
+                function openNav() {
+          document.getElementById("myNav").style.width = "100%";
+        }
+
+        /* Close when someone clicks on the "x" symbol inside the overlay */
+        function closeNav() {
+          document.getElementById("myNav").style.width = "0%";
+        }
+        </script>
 </body>
 </html>

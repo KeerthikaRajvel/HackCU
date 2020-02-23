@@ -4,7 +4,7 @@ from MongoDB import connection
 from TwitterAPI import twitterAPI
 
 app=Flask(__name__)
-movie="Sapiens"
+movie="Homodeous"
 @app.route('/')
 def index():
    return render_template('index.html')
@@ -24,6 +24,13 @@ def add_user():
 def dashboard():
    if request.method == 'POST':
       result=connection.get_books()
+      return render_template('dashboard.html',books=result)
+
+@app.route('/search',methods=['GET','POST'])
+def search():
+   if request.method == 'POST':
+      book_details=connection.search(request.form["text"])
+      result=[{"_id":book_details["_id"],"image":book_details["image"]}]
       return render_template('dashboard.html',books=result)
 
 @app.route('/bookDetails')

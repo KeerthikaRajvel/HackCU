@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask import jsonify
 from MongoDB import connection
 from TwitterAPI import twitterAPI
@@ -12,6 +12,18 @@ def index():
 @app.route('/signup',methods=['GET'])
 def signup():
    return render_template('signup.html')
+
+@app.route('/add_user',methods=['GET','POST'])
+def add_user():
+   if request.method == 'POST':
+      result = request.form.to_dict()
+      connection.insert_user(result)
+   return render_template('index.html')
+
+app.route('/dashboard')
+def dashboard():
+   result=connection.get_books()
+   return render_template('dashboard.html',books=result)
 
 @app.route('/bookDetails')
 def bookDetails(movie):

@@ -24,12 +24,12 @@
     </div> 
     <div class="login-box">
         <h1>Welcome Reader</h1>
-            <form>
+            <form action="http://localhost:3400/dashboard">
             <input type="text" name="email" placeholder="Email">
             <input type="password" name="password" placeholder="Password">
             <input type="submit" name="submit" value="Login">
-            <p>Not a member yet? <a href = "{{ url_for('signup') }}"> Sign up </a></p>
             </form>
+            <p>Not a member yet? <a href = "{{ url_for('signup') }}"> Sign up </a></p>
     </div>
     
     

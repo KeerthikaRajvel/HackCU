@@ -12,6 +12,10 @@ Book barter available as a web-app. Connect with other readers and exchange book
 * Twitter chatter about the book/author
 * Connect with owner of book with one-click to schedule pickup/drop
 
+## Tech Stack
 
-
-
+* Design : Adobe XD
+* Database : MongoDB Atlas
+* Back-End : Python Flask
+* APIs : Twitter API, Google Books API
+* Front-End : HTML, CSS, JQuery

@@ -38,7 +38,7 @@ def search():
 @app.route('/bookDetails/<book>')
 def bookDetails(book):
    details=connection.search(book)
-   tweets=twitterAPI.get_tweets(book)
+   tweets=twitterAPI.get_tweets(book,details[0]["authors"])
    return render_template('bookDetails.html',book_details=details,target=tweets)
 
 if __name__ == '__main__':

@@ -1,13 +1,14 @@
 function showTweets(){
     console.log(ids)
 
-    // for (var i = 0; i < ids.length; i++){
+     for (var i = 0; i < ids.length; i++){
       twttr.widgets.createTweet(
-          ids[0],   
+          ids[i],
           document.getElementById('tweets'),
           {
-            theme: 'dark'
+            theme: 'light'
           }
         );
+
   }
-  
+  }

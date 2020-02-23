@@ -6,6 +6,7 @@
     
 </head>
 <body>
+ <div class="white"><h2><b><center>{{book_details[0]['title']}}</center></b></h2></div>
     <div class="container">
         <div class="left">
 
@@ -24,13 +25,16 @@
             </div>
         </div>
         <div class="movieDetails">
-            <div class="white"><h2><b><center>{{book_details[0]['title']}}</center></b></h2></div>
              {% for key, value in book_details[0].items(): %}
-                    {% if key!="_id" and key!="image" and key!="title" and key!="books available" and key!="books borrowed" %}
-                         <b>{{key.capitalize()}}:</b><br><br>
-        {{value}}<br><br>
+                    {% if key=="averageRating" %}
+                        <div class="heading"><b>Average Rating:</b><br><br></div>
+                        <div class="text">{{value}}<br><br></div>
+                    {% elif key!="_id" and key!="image" and key!="title"%}
+                        <div class="heading"><b>{{key.capitalize()}}:</b><br><br></div>
+                        <div class="text">{{value}}<br><br></div>
                     {% endif %}
             {% endfor %}
+            <br><br><br>
             <div class="interested">
                  <a href="mailto:swars1998@gmail.com">
                  <input type="submit" name="Interested" value=" Interested ! ">

@@ -13,7 +13,7 @@ def get_books():
     records = db.book_info  # Collections
     result=[]
     for record in list(records.find()):
-        result.append({"title":record["title"],"image":record["image"]})
+        result.append({"title":record["title"],"image":record["image"],"authors":["authors"]})
     print(result)
     return result
 

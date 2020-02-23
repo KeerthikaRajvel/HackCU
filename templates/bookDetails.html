@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/bookDetails.css">
+</head>
+<body>
+<div class="container">
+    <div class="image">
+        <img src={{book_details[0]['image']}}>
+    </div>
+    <div class="movieDetails">
+        <div class="white"><h2><b><center>{{book_details[0]['title']}}</center></b></h2></div>
+         {% for key, value in book_details[0].items(): %}
+                {% if key!="_id" and key!="image" and key!="title" %}
+                     <b>{{key.capitalize()}}:</b><br><br>
+    <div class="white">{{value}}<br><br></div>
+                {% endif %}
+        {% endfor %}
+        <div class="interested">
+             <input type="submit" name="Interested" value=" Interested ! ">
+        </div>
+    </div>
+</div>
+</body>
+</html>

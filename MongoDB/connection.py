@@ -11,8 +11,9 @@ def get_books():
     db = client.get_database("BookBarter_Overall")  # Database
     records = db.book_info  # Collections
     result=[]
-    for record in list(records):
+    for record in list(records.find()):
         result.append({"_id":record["_id"],"image":record["image"]})
+    print(result)
     return result
 
 def search(title):

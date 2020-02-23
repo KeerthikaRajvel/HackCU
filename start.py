@@ -20,10 +20,11 @@ def add_user():
       connection.insert_user(result)
    return render_template('index.html')
 
-app.route('/dashboard')
+@app.route('/dashboard',methods=['GET','POST'])
 def dashboard():
-   result=connection.get_books()
-   return render_template('dashboard.html',books=result)
+   if request.method == 'POST':
+      result=connection.get_books()
+      return render_template('dashboard.html',books=result)
 
 @app.route('/bookDetails')
 def bookDetails(movie):

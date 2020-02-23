@@ -4,7 +4,7 @@ from MongoDB import connection
 from TwitterAPI import twitterAPI
 
 app=Flask(__name__)
-movie="Homodeous"
+
 @app.route('/')
 def index():
    return render_template('index.html')

@@ -26,17 +26,18 @@ def dashboard():
       result=connection.get_books()
       return render_template('dashboard.html',books=result)
 
-@app.route('/search',methods=['GET','POST'])
+@app.route('/lend',methods=['GET','POST'])
 def search():
    if request.method == 'POST':
-      book_details=connection.search(request.form["text"])
-      result=[{"_id":book_details["_id"],"image":book_details["image"]}]
-      return render_template('dashboard.html',books=result)
+      book=request.form["book-name"]
+      connection.add_book(book)
+      result = connection.get_books()
+      return render_template('dashboard.html', books=result)
 
-@app.route('/bookDetails')
-def bookDetails(movie):
-   details=connection.search(movie)
-   tweets=twitterAPI.get_tweets(movie)
+@app.route('/bookDetails/<book>')
+def bookDetails(book):
+   details=connection.search(book)
+   tweets=twitterAPI.get_tweets(book)
    return render_template('bookDetails.html',book_details=details,tweets=tweets)
 
 if __name__ == '__main__':

@@ -14,6 +14,6 @@ def get_book_details(book_name):
     result['image']=api_result['items'][0]['volumeInfo']['imageLinks']['thumbnail']
     return result
 
-books=['Sapiens','The gone girl','Little women','Harry Potter and the chamber of secrets','Life of pi']
-for book in books:
-    print(get_book_details(book))
+# books=['Sapiens','The gone girl','Little women','Harry Potter and the chamber of secrets','Life of pi']
+# for book in books:
+#     print(get_book_details(book))

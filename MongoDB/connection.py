@@ -1,4 +1,5 @@
 from pymongo import MongoClient
+from BooksAPI import booksAPI
 
 def insert_user(user_details):
     client = MongoClient("mongodb+srv://HackCU:girlpower@book-barter-erinp.gcp.mongodb.net/test?retryWrites=true&w=majority")
@@ -12,13 +13,18 @@ def get_books():
     records = db.book_info  # Collections
     result=[]
     for record in list(records.find()):
-        result.append({"_id":record["_id"],"image":record["image"]})
+        result.append({"title":record["title"],"image":record["image"]})
     print(result)
     return result
 
-def search(title):
+def add_book(book):
+    client = MongoClient("mongodb+srv://HackCU:girlpower@book-barter-erinp.gcp.mongodb.net/test?retryWrites=true&w=majority")
+    db = client.get_database("BookBarter_Overall")  # Database
+    records = db.book_info  # Collections
+    records.insert(booksAPI.get_book_details(book))
+
+def search(book):
     client = MongoClient("mongodb+srv://HackCU:girlpower@book-barter-erinp.gcp.mongodb.net/test?retryWrites=true&w=majority")
     db = client.get_database("BookBarter_Overall") #Database
     records = db.book_info #Collections
-    print(list(records.find({"title": "Sapiens"})))
-    return records.find({"title": "Sapiens"})
+    return records.find({"title": book})

@@ -10,7 +10,7 @@
 <body>
     <div class="header">
         <div class="header-left"><h2>Papyr-Us</h2></div>
-        <div class="header-right"> <form method="POST"><input id="searchbox" href="{{ url_for('search') }}" type="text" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2" />
+        <div class="header-right"> <form method="POST"><input id="searchbox"  type="text" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2" />
         </form></div>
       <div class="header-btn"> <button class="lend" onclick="openNav()">Lend</button> </div>
         <!-- <div class="header-tag"><h7>Just keep reading!</h7></div> -->
@@ -23,12 +23,16 @@
 
         <!-- Overlay content -->
         <div class="overlay-content">
+            <form method="POST" action="http://localhost:3400/lend">
             <input type="text" name="book-name" placeholder="Book Title">
             <input type="submit" name="submit" value="Confirm">
+            </form>
         </div>
 
     </div>
-      
+      {% for book in books: %}
+        <a href="{{url_for('bookDetails',book=book['title'])}}"> <img src={{book['image']}}></a>
+      {% endfor %}
       <!-- Use any element to open/show the overlay navigation menu -->
     <script>
                 function openNav() {

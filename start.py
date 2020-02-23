@@ -30,7 +30,8 @@ def dashboard():
 def search():
    if request.method == 'POST':
       book=request.form["book-name"]
-      connection.add_book(book)
+      if book!="":
+         connection.add_book(book)
       result = connection.get_books()
       return render_template('dashboard.html', books=result)
 
